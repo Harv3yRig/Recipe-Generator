@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html style="height: 100%;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/Frontend.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+    <header>
+       <a href="/index.html"><img id="logo" src="/The Recipe Generator_transparent.png" alt="The Recipe Generator Logo"></a>
+        <div class="headerContent">
+            <a href="/index.html"><div id="mainHeader">Recipe Generator</div></a>
+        </div>
+    </header>
+    <body>
+        <div class="container">
+            <div class="leftColumn">
+                <div class="inputIngredients">
+                    <div id="ingredient">What ingredients do you have?</div>
+                    <input type="text" id="inputIngredient" placeholder="Enter ingredient here..."/>
+                    <button id="saveIngredient" onclick="addToList()">Add to list</button>
+                </div>
+                <script>
+                    const input = document.getElementById('inputIngredient');
+                    input.addEventListener('keydown', (event) => {
+                        if(event.key === 'Enter') {
+                            addToList();
+                        }
+                    })
+                </script>
+                <ul id="ingredientList" class="hidden"></ul>
+                <div class="apiKeyEntry">
+                    <div id="enterAPIKey">Enter API Key:</div>
+                    <input type="text" id="apiKey" placeholder="Enter API Key here">
+                </div>
+            </div>
+            <div class="rightColumn">
+                <button id="generateRecipe" onclick="generateRecipe()">Generate Recipes</button>
+                <button id="customiseRecipe" onclick="hideMenu('customiseRecipePopUp')">Customise Recipes</button>
+            </div>
+        </div>
+    </body>
+    <div id="customiseRecipePopUp">
+        <div class="innerPopUp">
+            <div class="popUpHeader">
+                <img id="popUpLogo" src="/The Recipe Generator_transparent.png" alt="The Recipe Generator Logo">
+                <div id="popUpHead">Customise Recipe</div>
+            </div>
+            <div id="intolerancesAndDietsHeader">Intolerance</div>
+            <div class="intolerancesAndDiets">
+                <input type="checkbox" id="intoleranceCheck1" name="intoleranceCheck" value="Gluten">
+                <label for="intoleranceCheck1">Gluten Free</label>
+                <input type="checkbox" id="intoleranceCheck2" name="intoleranceCheck" value="Dairy">
+                <label for="intoleranceCheck2">Dairy Free</label>
+                <input type="checkbox" id="intoleranceCheck3" name="intoleranceCheck" value="Nut">
+                <label for="intoleranceCheck3">Nut Free</label>
+                <input type="checkbox" id="intoleranceCheck4" name="intoleranceCheck" value="Seafood">
+                <label for="intoleranceCheck4">Seafood/Shellfish</label>
+            </div>
+            <div id="intolerancesAndDietsHeader">Diets</div>
+            <div class="intolerancesAndDiets">
+                <input type="checkbox" id="dietCheck1" name="dietCheck" value="Vegan">
+                <label for="dietCheck1">Vegan</label>
+                <input type="checkbox" id="dietCheck2" name="dietCheck" value="Keto">
+                <label for="dietCheck2">Keto</label>
+                <input type="checkbox" id="dietCheck3" name="dietCheck" value="Vegetarian">
+                <label for="dietCheck3">Vegetarian</label>
+                <input type="checkbox" id="dietCheck4" name="dietCheck" value="Pescetarian">
+                <label for="dietCheck4">Pescetarian</label>
+            </div>
+            <div class="showNutrionalInfo">
+                <input type="checkbox" id="showNutrition" name="showNutrition">
+                <label for="showNutrition" style="font-weight: 600;">Show Nutritional Info</label>
+            </div>
+            <button id="saveSettings" onclick="hideMenu('customiseRecipePopUp')">Save recipe settings</button>
+        </div>
+        <div id="blackBackground"></div>
+    </div>
+    <script src="/app.js"></script>
+</html>

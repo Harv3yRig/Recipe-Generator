@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/Frontend.css"/>
+    <link rel="stylesheet" type="text/css" href="/header.css"/>
+    <link rel="stylesheet" href="/node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <header>
+       <a href="/index.html"><img id="logo" src="/The Recipe Generator_transparent.png" alt="The Recipe Generator Logo"></a>
+        <div class="headerContent">
+            <a href="/index.html"><div id="mainHeader">Recipe Generator</div></a>
+        </div>
+    </header>
+    <body onload="generateCards()">
+        <div class="glide">
+            <div class="glide__track" data-glide-el="track">
+              <ul class="glide__slides"></ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+            </div>
+          </div>
+          <script src="/node_modules/@glidejs/glide/dist/glide.min.js"></script>
+      <script src="/app.js"></script>
+    </body>
+</html>

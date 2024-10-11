@@ -130,7 +130,7 @@ function generateRecipe() {
             apiDiet = "";
         }
     
-        const apiReq = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}${apiIng}${apiInt}${apiDiet}&addRecipeNutrition=${nutrition}&instructionsRequired=true&addRecipeInstructions=true&fillIngredients=true`;
+        const apiReq = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&includeIngredients=${apiInt}&intolerances=${apiDiet}&instructionsRequired=true&fillIngredients=true`;
         localStorage.setItem("apiKey", JSON.stringify(apiReq));
         window.location.href='generatedRecipe.html';
     } else {
